@@ -1,0 +1,4 @@
+﻿  OpenMPI5.1.cpp
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI5.1\OpenMPI5.1\OpenMPI5.1.cpp(82,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI5.1\OpenMPI5.1\OpenMPI5.1.cpp(132,18): warning C4101: comm: неиспользованная локальная переменная
+  OpenMPI5.1.vcxproj -> C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI5.1\x64\Debug\OpenMPI5.1.exe

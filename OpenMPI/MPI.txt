@@ -1,0 +1,158 @@
+1) Свойства конфигурации - отладка - аргумменты каманды
+
+-n 4 $(TargetPath)
+
+2) Компоновщик - ввод - доп зависимости
+
+msmpi.lib == msmpi.lib;%(AdditionalDependencies)
+
+2) Компоновщик - общие - доп каталоги бибилиотек
+
+C:\Program Files %28x86%29\Microsoft SDKs\MPI\Lib\x64;%(AdditionalLibraryDirectories)
+
+3) С/C ++ - общие -доп каталоги включаемых файлов 
+
+sdk include (проста папка без версии)
+C:\Program Files (x86)\Microsoft SDKs\MPI\Include
+
+
+
+
+
+    int main(int argc, char** argv)
+    {
+        int arr[ARR_SIZE];
+        int rank, size;
+        MPI_Init(&argc, &argv);
+        MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+        MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+        if (rank == 0) {
+            cout << " MPI - TASK 4 \n\n";
+
+            for (int j = 0; j < ARR_SIZE; ++j)
+                arr[j] = MIN_VALUE + rand() % (MAX_VALUE - MIN_VALUE + 1);
+
+            show_arr(arr, ARR_SIZE);
+            cout << "\n\n";
+
+            for (int i = 1; i < size; i++) MPI_Send(arr, i, MPI_INT, i, 11001, MPI_COMM_WORLD);
+        }
+        else
+        {
+            int count;
+            MPI_Status status;
+
+            //Она позволяет получить информацию о сообщении которое ожидает в очереди на прием не получая самого сообщения
+            MPI_Probe(1, 100, MPI_COMM_WORLD, &status);
+            //По структуре status процедура определяет сколько данных типа datatype передано соответствующим сообщением и записывает результат по адресу count.
+            MPI_Get_count(&status, MPI_INT, &count);
+
+            int* buf = new int[count];
+
+            //MPI_Recv(&buf, count, MPI_INT, 1, 100, MPI_COMM_WORLD, &status);
+
+            cout << "Process:" << rank << " || Count: " << count << " || Array: ";
+            show_arr(buf, count);
+        }
+
+        MPI_Finalize();
+
+        return MPI_SUCCESS;
+    }
+
+------------------------
+
+    int main(int argc, char** argv)
+    {
+        int rank, size, count;
+        int a = 1, b = 1;
+        int x[ARR_SIZE], y[ARR_SIZE];
+        MPI_Status status;
+
+        MPI_Init(&argc, &argv);
+        MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+        MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+        size--;
+        size = min(size, 12);
+        int lenght = ARR_SIZE / size + 1;
+
+        if ((rank - 1) * lenght >= ARR_SIZE || rank > size) goto finish_prog;
+        
+        srand(time(NULL));
+
+        if (rank == 0) {
+            //заполенение векторов
+            for (int i = 0; i < ARR_SIZE; ++i) {
+                x[i] = rand() % 10;
+                y[i] = rand() % 10;
+            }
+            
+            cout << "x = ";
+            show_vec(x, ARR_SIZE);
+            cout << "y = ";
+            show_vec(y, ARR_SIZE);
+            cout << "\n";
+
+            int k = 1, j;
+            for (int i = 0; i < ARR_SIZE; i += lenght, ++k) {
+                j = min(ARR_SIZE - 1, i + lenght - 1);
+                MPI_Send(&x[i], j - i + 1, MPI_INT, k, 11001, MPI_COMM_WORLD);
+                MPI_Send(&y[i], j - i + 1, MPI_INT, k, 11001, MPI_COMM_WORLD);
+            }
+
+            //обратно принимаем и считаем 
+            k = 1;
+            for (int i = 0; i < ARR_SIZE; i += lenght, ++k) {
+                int j = min(ARR_SIZE - 1, i + lenght - 1);
+                MPI_Recv(&y[i], j - i + 1, MPI_INT, k, 11001, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            }
+
+            cout << "z = ";
+            show_vec(y, ARR_SIZE);
+        }
+        else {
+            MPI_Status mpi_status;
+            MPI_Probe(0, 11001, MPI_COMM_WORLD, &mpi_status);
+            int q;
+            MPI_Get_count(&mpi_status, MPI_INT, &q);
+
+            int* x = new int[q];
+            int* y = new int[q];
+            MPI_Recv(&x[0], q, MPI_INT, 0, 11001, MPI_COMM_WORLD, &mpi_status);
+            MPI_Recv(&y[0], q, MPI_INT, 0, 11001, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+            show_vec(x, q);
+            cout << x[0] << " ";
+            mult_vec(x,q,a);
+            mult_vec(y,q,b);
+
+            // все отослали
+            if (q == 0) goto finish_prog;
+
+            for (int i = 0; i < q; ++i) y[i] += x[i];
+            show_vec(y, q);
+            MPI_Send(&y, q, MPI_INT, 0, 11001, MPI_COMM_WORLD);
+        }
+        finish_prog:MPI_Finalize();
+
+        return MPI_SUCCESS;
+    }
+
+
+
+
+                if (thread_id == size && lastCount != 0) k = lastCount;
+                int* buf = new int[k];
+                int s = 0;
+
+                MPI_Recv(&buf, k, MPI_INT, thread_id, 2, MPI_COMM_WORLD, &st);
+
+                for (int q = 0; q < t; q++, s++) {
+                   
+                    cout << k << " " << thread_id << " " << y[i] << "\n";
+                }
+
+                thread_id++;
+                if (thread_id == size && lastCount != 0) t = lastCount;

@@ -1,0 +1,12 @@
+﻿  OpenMPI3.cpp
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(97,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(80,20): warning C4101: mpi_stat: неиспользованная локальная переменная
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(152,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(135,20): warning C4101: mpi_stat: неиспользованная локальная переменная
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(218,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(199,22): warning C4101: rtype: неиспользованная локальная переменная
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(198,20): warning C4101: mpi_stat: неиспользованная локальная переменная
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(289,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(271,20): warning C4101: mpi_stat: неиспользованная локальная переменная
+C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\OpenMPI3\OpenMPI3.cpp(343,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  OpenMPI3.vcxproj -> C:\Users\user\Desktop\KFU\Parallel\OpenMPI\I\OpenMPI3\x64\Debug\OpenMPI3.exe

@@ -1,0 +1,9 @@
+﻿  OpenMPI2.cpp
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\OpenMPI2\OpenMPI2.cpp(99,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\OpenMPI2\OpenMPI2.cpp(175,23): warning C4102: finish_process: неиспользованная метка
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\OpenMPI2\OpenMPI2.cpp(205,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\OpenMPI2\OpenMPI2.cpp(288,19): warning C4102: finish_process: неиспользованная метка
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\OpenMPI2\OpenMPI2.cpp(319,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\OpenMPI2\OpenMPI2.cpp(407,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\OpenMPI2\OpenMPI2.cpp(514,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  OpenMPI2.vcxproj -> C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI2\x64\Debug\OpenMPI2.exe

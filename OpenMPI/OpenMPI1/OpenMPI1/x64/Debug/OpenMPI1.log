@@ -1,0 +1,5 @@
+﻿  OpenMPI.cpp
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI1\OpenMPI1\OpenMPI.cpp(146,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI1\OpenMPI1\OpenMPI.cpp(245,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI1\OpenMPI1\OpenMPI.cpp(345,19): warning C4102: finish_process: неиспользованная метка
+  OpenMPI1.vcxproj -> C:\Users\user\Desktop\Parallel\OpenMPI\I\OpenMPI1\x64\Debug\OpenMPI1.exe
