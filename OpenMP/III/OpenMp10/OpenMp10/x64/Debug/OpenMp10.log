@@ -1,0 +1,3 @@
+﻿  OpenMp10.cpp
+C:\Users\user\Desktop\Параллельное прогр\III\OpenMp10\OpenMp10\OpenMp10.cpp(23,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  OpenMp10.vcxproj -> C:\Users\user\Desktop\Параллельное прогр\III\OpenMp10\x64\Debug\OpenMp10.exe

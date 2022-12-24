@@ -1,0 +1,3 @@
+﻿  OpenMp9.cpp
+C:\Users\user\Desktop\Параллельное прогр\III\OpenMp9\OpenMp9\OpenMp9.cpp(38,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  OpenMp9.vcxproj -> C:\Users\user\Desktop\Параллельное прогр\III\OpenMp9\x64\Debug\OpenMp9.exe
